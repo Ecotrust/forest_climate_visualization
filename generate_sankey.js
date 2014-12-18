@@ -39,19 +39,16 @@ generate_sankey = function(data){
       .text(function(d) { return d.name + "\n" + format(d.value); });
 
   node.append("text")
-      .attr("x", -6)
       .attr("y", function(d) { return d.dy / 2; })
       .attr("dy", ".35em")
-      .attr("text-anchor", "end")
-      .attr("transform", null)
-      .text(function(d) { 
-        if (data.nodes.indexOf(d) === visible_label_map[d.name]) {
-          return d.name; 
-        }
-      })
-    .filter(function(d) { return d.x < width / 2; })
       .attr("x", 6 + sankey.nodeWidth())
-      .attr("text-anchor", "start");
+      .attr("text-anchor", "start")
+      .attr("transform", null)
+      .text(function(d) {
+        if (data.nodes.indexOf(d) === visible_label_map[d.name]) {
+          return d.name;
+        }
+      });
 
   function dragmove(d) {
     d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
