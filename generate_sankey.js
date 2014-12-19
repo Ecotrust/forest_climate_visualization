@@ -1,11 +1,13 @@
 generate_sankey = function(data){
 
   var threshold = 400;
+  var ordering = 'custom';
+  // var ordering = 'default';
 
   sankey
       .nodes(data.nodes)
       .links(data.links)
-      .layout(32);
+      .layout(32, ordering);
 
   var link = svg.append("g").selectAll(".link")
       .data(data.links)
