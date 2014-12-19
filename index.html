@@ -5,19 +5,39 @@
 <link rel="stylesheet" href="sankey.css">
 
 <body>
-    <h1>Sankey Diagrams [No Climate]</h1>
-
-    <p id="chart">
-
-    <aside>Drag to rearrange nodes.</aside>
+    <h1>PNW Forest Types [No Climate]</h1>
 
     <p>To view other climate scenarios:</p>
     <ul>
-        <li><a href="index.html">No Climate</a></li>
         <li><a href="ensemble45.html">Ensemble rcp 4.5</a></li>
         <li><a href="ensemble85.html">Ensemble rcp 8.5</a></li>
     </ul>
 
+    <table class="column-header-container">
+      <tr>
+        <th class="column-header">
+          2013
+        </th>
+        <th class="column-header">
+          2033
+        </th>
+        <th class="column-header">
+          2053
+        </th>
+        <th class="column-header">
+          2073
+        </th>
+        <th class="column-header">
+          2093
+        </th>
+        <th class="column-header">
+          2108
+        </th>
+      </tr>
+    </table>
+    <p id="chart">
+
+    <aside>Drag to rearrange nodes.</aside>
 
     <script type="text/javascript" src="d3.v3.min.js"></script>
     <script type="text/javascript" src="sankey.js"></script>
