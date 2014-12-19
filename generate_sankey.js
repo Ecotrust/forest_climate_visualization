@@ -1,4 +1,7 @@
 generate_sankey = function(data){
+
+  var threshold = 400;
+
   sankey
       .nodes(data.nodes)
       .links(data.links)
@@ -10,6 +13,13 @@ generate_sankey = function(data){
       .attr("class", "link")
       .attr("d", path)
       .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+      .style("visibility", function(d) {
+        if (d.value >= threshold) {
+          return 'visible';
+        } else {
+          return 'hidden';
+        }
+      })
       .sort(function(a, b) { return b.dy - a.dy; });
 
   link.append("title")
@@ -35,6 +45,13 @@ generate_sankey = function(data){
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d) { return d.color = color(d.name.replace(/ .*/, "")); })
       .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
+      .style("visibility", function(d) {
+        if (d.value >= threshold) {
+          return 'visible';
+        } else {
+          return 'hidden';
+        }
+      })
     .append("title")
       .text(function(d) { return d.name + "\n" + format(d.value); });
 
