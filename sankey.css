@@ -1,5 +1,5 @@
 .column-header-container {
-  width: 1900px;
+  width: 1240px;
 }
 
 .column-header {
@@ -8,7 +8,7 @@
 }
 
 #chart {
-  height: 1350px;
+  height: 1200px;
 }
 
 .node rect {
