@@ -1,6 +1,6 @@
 var margin = {top: 1, right: 1, bottom: 6, left: 1},
-    width = 1200 - margin.left - margin.right,
-    height = 1000 - margin.top - margin.bottom;
+    width = 1800 - margin.left - margin.right,
+    height = 1350 - margin.top - margin.bottom;
 
 var formatNumber = d3.format(",.0f"),
     format = function(d) { return formatNumber(d) + " acres"; },
@@ -14,7 +14,7 @@ var svg = d3.select("#chart").append("svg")
 
 var sankey = d3.sankey()
     .nodeWidth(15)
-    .nodePadding(10)
+    .nodePadding(20)
     .size([width-200, height-10]);
 
 var path = sankey.link();

@@ -1,6 +1,6 @@
 generate_sankey = function(data){
 
-  var threshold = 400;
+  var threshold = 0;
   var ordering = 'custom';
   // var ordering = 'default';
 
