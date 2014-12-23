@@ -56,6 +56,7 @@ generate_sankey = function(data){
       .attr("x", 6 + sankey.nodeWidth())
       .attr("text-anchor", "start")
       .attr("transform", null)
+      .style('font-family', '"Georgia", Georgia, serif')
       .text(function(d) {
         if (data.nodes.indexOf(d) === visible_label_map[d.name]) {
           return d.name;
